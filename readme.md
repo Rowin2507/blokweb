@@ -69,11 +69,11 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 ## Intake (week 1)
 -uitwerken voor de kick-off werkgroep - begin van de eerste week-
 
-**Je startniveau:** Zwart
+**Je startniveau:** Zwarte piste.
 
-**Je focus:** Responsive & extra technieken toepassen
+**Je focus:** Responsive & extra technieken toepassen.
 
-**Je opdracht:** De Spotify app namaken in HTML. Bij voorkeur de native versie van de Spotify app (iPhone, iPad, Mac), maar als dat niet mag de desbetreffende webversie: https://open.spotify.com/ 
+**Je opdracht:** De Spotify app namaken in HTML/CSS/JS. Bij voorkeur de native versie van de Spotify app (iPhone, iPad, Mac), maar als dat niet mag de desbetreffende webversie: https://open.spotify.com/ 
 
 **Screenshot(s) van de eerste pagina (small screen):**
 
