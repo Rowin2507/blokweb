@@ -77,8 +77,8 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 **Screenshot(s) van de eerste pagina (small screen):**
 
-<img src="assets/images/dummy-plaatje.svg" width="375px" alt="omschrijving van de pagina">
+<img src="assets/images/Spotify-home.PNG" width="375px" alt="Een screenshot van de homepagina van Spotify (iPhone)">
 
 **Screenshot(s) van de tweede pagina (small screen):**
 
-<img src="assets/images/dummy-plaatje.svg" width="375px" alt="omschrijving van de pagina">
+<img src="assets/images/Spotify-afspeellijst.PNG" width="375px" alt="Een screenshot van een afspeellijst van Spotify (iPhone)">
