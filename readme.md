@@ -70,7 +70,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 **Je startniveau:** Zwarte piste.
 
-**Je focus:** Responsive & extra technieken toepassen.
+**Je focus:** Beide punten: volledig responsive maken & extra aandacht voor de surface laag + extra's.
 
 **Je opdracht:** De Spotify app namaken in HTML/CSS/JS. Bij voorkeur de native versie van de Spotify app (iPhone, iPad, Mac), maar als dat niet mag de desbetreffende webversie: https://open.spotify.com/ 
 
