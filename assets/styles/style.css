@@ -231,7 +231,7 @@ body.home main section ol li figcaption p {
 
 
 body.home main section.listen-again, body.home main section.popular-albums {
-  padding: 1em 0;
+  padding: 1.05em 0;
 }
 body.home main section.listen-again ol li img, body.home main section.popular-albums ol li img  {
   height: 9em;
