@@ -144,7 +144,7 @@ header ul {
 }
 button {background-color: transparent;}
 header ul li svg {
-  height: 22px;
+  height: 20px;
 }
 header ul li svg path {
   fill: var(--color-white);
@@ -249,7 +249,7 @@ body.home main section.listen-again ol li img, body.home main section.popular-al
 /* SAFE AREA */
 header, main {
   /* padding-top: 44px; */
-  padding-top: 50px;
+  padding-top: 44px;
 }
 /* SAFE AREA MARQUEE FIX */
 /* .category-page main .marquee a {
