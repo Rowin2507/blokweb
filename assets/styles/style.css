@@ -248,7 +248,8 @@ body.home main section.listen-again ol li img, body.home main section.popular-al
 
 /* SAFE AREA */
 header, main {
-  padding-top: 44px;
+  /* padding-top: 44px; */
+  padding-top: 55px;
 }
 /* SAFE AREA MARQUEE FIX */
 /* .category-page main .marquee a {
