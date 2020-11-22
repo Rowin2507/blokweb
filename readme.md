@@ -62,7 +62,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ## Breakdownschets (week 1)
 
-<img src="assets/images/Breakdown-Spotify.png" width="100%" alt="Een breakdown van een gedeelte van de Spotify app (ios)">
+<img src="assets/images/github/Breakdown-Spotify.png" width="100%" alt="Een breakdown van een gedeelte van de Spotify app (ios)">
 
 
 
@@ -76,8 +76,8 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 **Screenshot(s) van de eerste pagina (small screen):**
 
-<img src="assets/images/Spotify-home.PNG" width="375px" alt="Een screenshot van de homepagina van Spotify (iPhone)">
+<img src="assets/images/github/Spotify-home.PNG" width="375px" alt="Een screenshot van de homepagina van Spotify (iPhone)">
 
 **Screenshot(s) van de tweede pagina (small screen):**
 
-<img src="assets/images/Spotify-afspeellijst.PNG" width="375px" alt="Een screenshot van een afspeellijst van Spotify (iPhone)">
+<img src="assets/images/github/Spotify-afspeellijst.PNG" width="375px" alt="Een screenshot van een afspeellijst van Spotify (iPhone)">
