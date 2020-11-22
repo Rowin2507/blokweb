@@ -14,7 +14,7 @@
 /* IMPORT FONT ---------------------------------------------- */
 /* https://transfonter.org/ */
 @font-face {
-  font-family: 'Circular Spotify Tx T Med';
+  font-family: 'Circular Spotify Tx T';
   src: url('../fonts/circular/CircularSpotifyTxT-Med.woff2') format('woff2'),
       url('../fonts/circular/CircularSpotifyTxT-Med.woff') format('woff'),
       url('../fonts/circular/CircularSpotifyTxT-Med.ttf') format('truetype');
@@ -22,7 +22,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: 'Circular Spotify Tx T Book';
+  font-family: 'Circular Spotify Tx T';
   src: url('../fonts/circular/CircularSpotifyTxT-Book.woff2') format('woff2'),
       url('../fonts/circular/CircularSpotifyTxT-Book.woff') format('woff'),
       url('../fonts/circular/CircularSpotifyTxT-Book.ttf') format('truetype');
