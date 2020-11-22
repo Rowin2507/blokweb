@@ -144,7 +144,7 @@ header ul {
 }
 button {background-color: transparent;}
 header ul li svg {
-  height: 18px;
+  height: 19px;
 }
 header ul li svg path {
   fill: var(--color-white);
