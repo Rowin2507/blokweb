@@ -1,5 +1,284 @@
-/* CSS Document */
-*, *::after, *::before {
-  box-sizing:border-box;  
+/* CSS VARIABLES ---------------------------------------------- */
+/* https://www.w3schools.com/css/css3_variables.asp */
+:root {
+  --color-green: #1ED760;
+  --color-green-hover: #1DB954;
+  --color-white: #FFFFFF;
+  --color-gray: #1E1E1E;
+  --color-dark: #0F0F0F;
+  --color-black: #191414;
 }
 
+
+
+/* IMPORT FONT ---------------------------------------------- */
+/* https://transfonter.org/ */
+@font-face {
+  font-family: 'Circular Spotify Tx T Med';
+  src: url('../fonts/circular/CircularSpotifyTxT-Med.woff2') format('woff2'),
+      url('../fonts/circular/CircularSpotifyTxT-Med.woff') format('woff'),
+      url('../fonts/circular/CircularSpotifyTxT-Med.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circular Spotify Tx T Book';
+  src: url('../fonts/circular/CircularSpotifyTxT-Book.woff2') format('woff2'),
+      url('../fonts/circular/CircularSpotifyTxT-Book.woff') format('woff'),
+      url('../fonts/circular/CircularSpotifyTxT-Book.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circular Spotify Tx T';
+  src: url('../fonts/circular/CircularSpotifyTxT-Bold.woff2') format('woff2'),
+      url('../fonts/circular/CircularSpotifyTxT-Bold.woff') format('woff'),
+      url('../fonts/circular/CircularSpotifyTxT-Bold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circular Spotify Tx T';
+  src: url('../fonts/circular/CircularSpotifyTxT-Light.woff2') format('woff2'),
+      url('../fonts/circular/CircularSpotifyTxT-Light.woff') format('woff'),
+      url('../fonts/circular/CircularSpotifyTxT-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Circular Spotify Tx T';
+  src: url('../fonts/circular/CircularSpotifyTxT-Black.woff2') format('woff2'),
+      url('../fonts/circular/CircularSpotifyTxT-Black.woff') format('woff'),
+      url('../fonts/circular/CircularSpotifyTxT-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* TIJDELIJK!? */
+/* @font-face {
+  font-family: Circular;
+  src: url("../fonts/circular-light.woff2");
+}
+@font-face {
+  font-family: Circular;
+  font-weight: 350;
+  src: url("../fonts/circular-book.woff2") format("opentype");
+}
+@font-face {
+  font-family: Circular;
+  font-weight: 400;
+  src: url("../fonts/circular-medium.woff2") format("opentype");
+}
+@font-face {
+  font-family: Circular;
+  src: url("../fonts/circular-bold.woff2");
+  font-weight: bold;
+}
+@font-face {
+  font-family: Circular;
+  font-weight: 800;
+  src: url("../fonts/circular-black.woff2") format("opentype");
+} */
+
+
+
+/* PREDEFINED ---------------------------------------------- */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  position: relative;
+  margin: 0 auto;
+  padding: 0;
+  font-family: 'Circular Spotify Tx T', sans-serif;
+  font-size: 16px;
+  font-weight: 400; 
+  font-style: normal;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  /* -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; */
+}
+body.overlay-visible {
+  position: absolute; /* SAFARI FIX */
+  height: 100vh; /* SAFARI FIX */
+  width: 100vw; /* SAFARI FIX */
+  overflow-y: hidden;
+}
+.wrapper {
+  margin: 0 auto;
+  width: 90%;
+}
+
+
+
+/* GENERAL STYLING ---------------------------------------------- */
+/* HEADER ----------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-bottom: 7px;
+  width: 100%;
+  background-color: transparent;
+  z-index: 996;
+
+
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 85%;
+  list-style: none;
+}
+button {background-color: transparent;}
+header ul li svg {
+  height: 22px;
+}
+header ul li svg path {
+  fill: var(--color-white);
+}
+/* header ul li a {
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 10px;
+} */
+
+
+
+
+/* HOME STYLING ---------------------------------------------- */
+/* HEADER ----------- */
+body.home header ul {
+  justify-content: flex-end;
+}
+
+/* MAIN ----------- */
+body.home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 350px;
+  width: 100vw;
+  background: rgb(15,15,15); /* https://cssgradient.io/ */
+  background: linear-gradient(340deg, rgba(15,15,15,1) 49%, rgba(24,27,22,1) 58%, rgba(31,37,27,1) 65%, rgba(36,44,31,1) 68%, rgba(49,62,41,1) 74%, rgba(65,84,53,1) 80%, rgba(119,156,93,1) 100%);
+  opacity: 0.75;
+  z-index: -1;
+}
+body.home main h2 {
+  padding-left: 5%;
+  margin-bottom: 0.75em;
+  font-size: 1.35em;
+  font-weight: 600;
+}
+body.home main section.recently-played {
+  padding: 2.5em 0 2em 0;
+}
+body.home main section ol {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  overflow-x: auto;
+}
+/* HIDE SCROLLBAR - https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
+body.home main section ol::-webkit-scrollbar {
+  display: none;
+}
+body.home main section ol li {
+  padding: 0 0.575em;
+}
+body.home main section ol li:first-of-type {
+  padding: 0 0.575em 0 5vw;
+}
+body.home main section ol li:last-of-type {
+  padding: 0 5vw 0 0.575em;
+}
+body.home main section ol li a {
+  text-decoration: none;
+  color: var(--color-white);
+  line-height: 1.3em;
+}
+body.home main section.recently-played ol li a {
+  text-align: center;
+}
+body.home main section.recently-played ol li img {
+  height: 7em;
+  border-radius: 100%;
+}
+body.home main section ol li figcaption {
+  margin-top: 0.35em;
+  font-size: 0.8em;
+}
+body.home main section ol li figcaption h4 {
+  margin-top: 0.5em;
+  font-size: 1.1em;
+}
+body.home main section ol li figcaption p {
+  opacity: 0.65;
+}
+
+
+body.home main section.listen-again, body.home main section.popular-albums {
+  padding: 1.5em 0;
+}
+body.home main section.listen-again ol li img, body.home main section.popular-albums ol li img  {
+  height: 9em;
+}
+
+
+
+
+
+
+
+
+/* STYLING FULL SCREEN APP ONLY - IPHONE X/XS/11/12 ------------------------------------------- */
+
+/* SAFE AREA */
+header, main {
+  padding-top: 44px;
+}
+/* SAFE AREA MARQUEE FIX */
+/* .category-page main .marquee a {
+  height: calc(100vh - 270px);
+} */
+
+
+/* OTHER SCREEN THAN MOBILE ---------------------------------------------- */
+@media only screen and (min-width: 768px) {
+  html:before {
+    content: "Alleen mobiele weergave";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-green);
+    color: var(--color-white);
+    font-family: Circular, sans-serif;
+    font-size: 55px;
+    font-weight: 600;
+    text-transform: uppercase;
+    visibility: visible;
+    opacity: 1;
+  }
+  body {
+    display: none;
+  }
+
+
+} /* END TAG (OTHER) */
