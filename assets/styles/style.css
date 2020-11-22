@@ -144,7 +144,7 @@ header ul {
 }
 button {background-color: transparent;}
 header ul li svg {
-  height: 19px;
+  height: 20px;
 }
 header ul li svg path {
   fill: var(--color-white);
@@ -184,7 +184,7 @@ body.home main h2 {
   font-weight: 600;
 }
 body.home main section.recently-played {
-  padding: 2em 0 2em 0;
+  padding: 2.25em 0 2em 0;
 }
 body.home main section ol {
   display: flex;
