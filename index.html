@@ -100,7 +100,7 @@
 		</section>
 		<section class="listen-again">
 			<h2>Luister opnieuw</h2>
-			<ol>
+			<ul>
 				<li>
 					<a href="#">
 						<figure>
@@ -156,11 +156,11 @@
 						</figure>
 					</a>
 				</li>
-			</ol>
+			</ul>
 		</section>
 		<section class="popular-albums">
 			<h2>Populaire albums</h2>
-			<ol>
+			<ul>
 				<li>
 					<a href="#">
 						<figure>
@@ -216,21 +216,79 @@
 						</figure>
 					</a>
 				</li>
-			</ol>
+			</ul>
 		</section>
 		<section class="..">
 			<h2>Jouw playlists</h2>
+			<ul>
+				<li>
+					<a href="#">
+						<figure>
+							<img src="assets/images/albums/After-Hours.jpeg" alt="After Hours - The Weeknd" />
+							<figcaption>
+								<h4>Good stuff</h4>
+								<p>...</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<figure>
+							<img src="assets/images/albums/Positions.jpeg" alt="Positions - Ariana Grance" />
+							<figcaption>
+								<h4>Throwback tunes</h4>
+								<p>...</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						<figure>
+							<img src="assets/images/albums/To-The-Bone.jpeg" alt="To The Bone - Steven Wilson" />
+							<figcaption>
+								<h4>De ultieme lijst</h4>
+								<p>...</p>
+							</figcaption>
+						</figure>
+					</a>
+				</li>
+			</ul>
 		</section>
 	</main>
 
 	<footer>
-		
+		<section class="now-playing-bar">
+			<progress max="100" value="30"></progress>
+			<button id="play-pause" type="button">Play Audio</button>
+			<ul>
+				<li>Huidig lied..</li>
+			</ul>
+
+		</section>
+		<nav>
+			<ul>
+				<li>
+					<a href="#">Link 1</a>
+				</li>
+				<li>
+					<a href="#">Link 2</a>
+				</li>
+				<li>
+					<a href="#">Link 3</a>
+				</li>
+			</ul>
+		</nav>
 	</footer>
 
-
-
+	<!-- MP3 AUDIO (CURRENT SONG PLAYING) - https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content -->
+	<audio id="now-playing-mp3" 
+       preload="auto" 
+       src="assets/songs/Georgia_-_Started_Out.mp3#t=00:01:00">
+	</audio>
 
 	
-	<!-- <script src="assets/scripts/script.js"></script> -->
+	<script src="assets/scripts/script.js"></script>
 </body>
 </html>

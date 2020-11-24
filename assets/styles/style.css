@@ -142,7 +142,7 @@ header ul {
   width: 85%;
   list-style: none;
 }
-button {background-color: transparent;}
+header ul li button {background-color: transparent;}
 header ul li svg {
   height: 22px;
 }
@@ -186,26 +186,26 @@ body.home main h2 {
 body.home main section.recently-played {
   padding: 2.35em 0 2em 0;
 }
-body.home main section ol {
+body.home main section ol, body.home main section ul {
   display: flex;
   flex-direction: row;
   list-style: none;
   overflow-x: auto;
 }
 /* HIDE SCROLLBAR - https://www.w3schools.com/howto/howto_css_hide_scrollbars.asp */
-body.home main section ol::-webkit-scrollbar {
+body.home main section ol::-webkit-scrollbar, body.home main section ul::-webkit-scrollbar {
   display: none;
 }
-body.home main section ol li {
+body.home main section ol li, body.home main section ul li  {
   padding: 0 0.575em;
 }
-body.home main section ol li:first-of-type {
+body.home main section ol li:first-of-type, body.home main section ul li:first-of-type {
   padding: 0 0.575em 0 5vw;
 }
-body.home main section ol li:last-of-type {
+body.home main section ol li:last-of-type, body.home main section ul li:last-of-type {
   padding: 0 5vw 0 0.575em;
 }
-body.home main section ol li a {
+body.home main section ol li a, body.home main section ul li a {
   text-decoration: none;
   color: var(--color-white);
   line-height: 1.3em;
@@ -217,23 +217,21 @@ body.home main section.recently-played ol li img {
   height: 7em;
   border-radius: 100%;
 }
-body.home main section ol li figcaption {
+body.home main section ol li figcaption, body.home main section ul li figcaption  {
   margin-top: 0.35em;
   font-size: 0.8em;
 }
-body.home main section ol li figcaption h4 {
+body.home main section ul li figcaption h4 {
   margin-top: 0.5em;
   font-size: 1.1em;
 }
-body.home main section ol li figcaption p {
+body.home main section ul li figcaption p {
   opacity: 0.65;
 }
-
-
 body.home main section.listen-again, body.home main section.popular-albums {
   padding: 1.05em 0;
 }
-body.home main section.listen-again ol li img, body.home main section.popular-albums ol li img  {
+body.home main section.listen-again ul li img, body.home main section.popular-albums ul li img  {
   height: 9em;
 }
 
