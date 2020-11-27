@@ -135,7 +135,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-bottom: 30px;
+  padding-bottom: 33px;
   background-color: var(--color-gray);
 }
 
@@ -207,7 +207,7 @@ footer .now-playing-bar-content button svg path {
 }
 
 footer nav ul {
-  padding-top: 0.45em;
+  padding-top: 0.425em;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
