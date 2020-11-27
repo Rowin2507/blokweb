@@ -18,6 +18,30 @@ window.addEventListener("scroll", () => {
 
 
 
+window.addEventListener('load', function() {
+    var nowPlayingBar = document.querySelector("footer .now-playing-bar");
+    nowPlayingBar.classList.add("visible");
+});
+
+// SCROLL TO ACTIVE SONG INFORMATION (NOW PLAYING)
+// https://stackoverflow.com/questions/68165/javascript-to-scroll-long-page-to-div
+document.querySelector('footer .now-playing-bar-info li:nth-of-type(2)').scrollIntoView();
+
+
+
+
+
+// ...
+// function getCarouselPositions() {
+//     carouselPositions = [];
+//     document.querySelectorAll('footer .now-playing-bar-info li').forEach(function(div) {
+//       carouselPositions.push([div.offsetLeft, div.offsetLeft + div.offsetWidth]); // add to array the positions information
+//     })
+//     halfContainer = document.querySelector('#container').offsetWidth/2;
+//     console.log(halfContainer);
+//   }
+  
+//   getCarouselPositions(); // call it once
 
 
 
@@ -33,6 +57,7 @@ document.getElementById("play-pause").onclick = function() {
 
 
 var nowPlaying = document.getElementById("now-playing-mp3");
+nowPlaying.volume = 0.5;
 var nowPlayingPlayPause = document.getElementById("play-pause");
 // var nowPlayingDuration = nowPlaying.duration;
 // var nowPlayingDurationPercentage = (nowPlaying.duration / 100); 
