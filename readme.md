@@ -40,7 +40,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 De afgelopen weken verliepen over het algemeen erg soepel zonder grote obstakels. Ik heb de eersta pagina in de basis al af, maar wil deze voor de aankomende periode nog verder uitbreiden. Waar ik een klein beetje ben vastgelopen is op het werkend maken van de progressie balk van het huidige nummer. Ik heb echter nu een goede site gevonden waar dit wordt uitgelegd en is het een kwestie van goed implementeren. Ik heb er vertrouwen in dat dit uiteindelijk wel goed gaat komen :D.
 
 **Screenshot(s):**
-
+<img src="assets/images/github/home-week3.png" width="100%" alt="Een screenshot van de door mij nagemaakte Spotify app (ios)">
 -screenshot(s) van hoe ver je bent met korte uitleg-
 
 ### Agenda voor meeting
