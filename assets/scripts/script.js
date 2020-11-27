@@ -1,3 +1,27 @@
+// HEADER FADE OUT ON SCROLL
+// https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
+var header = document.querySelector("header");
+const checkpoint = 75;
+
+window.addEventListener("scroll", () => {
+  const currentScroll = window.pageYOffset;
+  if (currentScroll <= checkpoint) {
+    opacity = 1 - currentScroll / checkpoint;
+    header.classList.remove("hidden");
+  } else {
+    opacity = 0;
+    header.classList.add("hidden");
+  }
+  header.style.opacity = opacity;
+});
+
+
+
+
+
+
+
+
 
 
 
