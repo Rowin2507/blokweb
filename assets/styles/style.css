@@ -135,7 +135,7 @@ footer {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-bottom: 35px;
+  padding-bottom: 25px;
   background-color: var(--color-gray);
 }
 
@@ -179,12 +179,12 @@ footer .now-playing-bar-content ul li {
   height: 100%;;
 }
 footer .now-playing-bar-content ul li h5 {
-  font-size: 0.85em;
+  font-size: 0.75em;
   font-weight: 400;
 }
 footer .now-playing-bar-content ul li p {
   margin-top: -2px;
-  font-size: 0.85em;
+  font-size: 0.75em;
   opacity: 0.65;
 }
 footer .now-playing-bar-content button {
@@ -227,7 +227,7 @@ footer nav ul li a {
   text-align: center;
 }
 footer nav ul li a svg {
-  height: 1.75em;
+  height: 1.5em;
 }
 footer nav ul li a svg path, footer nav ul li a svg rect {
   fill: var(--color-white);
@@ -239,7 +239,7 @@ footer nav ul li:last-of-type a svg {
 footer nav ul li a span {
   display: block;
   margin-top: 0.65em;
-  font-size: 0.75em;
+  font-size: 0.65em;
 }
 
 
