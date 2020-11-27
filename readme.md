@@ -6,9 +6,10 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 
 ## Bronnenlijst
-1. -bron 1-
-2. -bron 2-
-3. -...-
+1. https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Video_and_audio_content
+2. https://www.w3schools.com/css/css3_variables.asp
+3. https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
+4. https://www.geeksforgeeks.org/create-a-music-player-using-javascript/
 
 
 
