@@ -40,8 +40,8 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 De afgelopen weken verliepen over het algemeen erg soepel zonder grote obstakels. Ik heb de eersta pagina in de basis al af, maar wil deze voor de aankomende periode nog verder uitbreiden. Waar ik een klein beetje ben vastgelopen is op het werkend maken van de progressie balk van het huidige nummer. Ik heb echter nu een goede site gevonden waar dit wordt uitgelegd en is het een kwestie van goed implementeren. Ik heb er vertrouwen in dat dit uiteindelijk wel goed gaat komen :D.
 
 **Screenshot(s):**
-<img src="assets/images/github/home-week3.png" width="100%" alt="Een screenshot van de door mij nagemaakte Spotify app (ios)">
--screenshot(s) van hoe ver je bent met korte uitleg-
+<img src="assets/images/github/home-week3.png" width="375px" alt="Een screenshot van de door mij nagemaakte Spotify app (ios)">
+Zoals hierboven te zien heb ik de Spotify app (ios) nagemaat in HTML/CSS/JS. Ik vind het tot nu toe best goed gelukt, maar ga nog mogelijk maken dat je op het nummer kan klikken er een overlay zichtbaar wordt. Daarnaast moet er nog een andere pagina worden uitgewerkt, dat wordt een afspeellijst.
 
 ### Agenda voor meeting
 
