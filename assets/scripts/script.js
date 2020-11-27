@@ -9,6 +9,7 @@ document.getElementById("play-pause").onclick = function() {
 
 
 var nowPlaying = document.getElementById("now-playing-mp3");
+var nowPlayingPlayPause = document.getElementById("play-pause");
 // var nowPlayingDuration = nowPlaying.duration;
 // var nowPlayingDurationPercentage = (nowPlaying.duration / 100); 
 // console.log(nowPlayingDurationPercentage);
@@ -22,9 +23,11 @@ var nowPlaying = document.getElementById("now-playing-mp3");
 function togglePlay() {
     if (nowPlaying.paused) {
         nowPlaying.play();
+        nowPlayingPlayPause.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 3h4v18H5V3zm10 0h4v18h-4V3z" fill="currentColor"></path></svg>';
     }
     else {
         nowPlaying.pause();
+        nowPlayingPlayPause.innerHTML = '<svg viewBox="0 0 24 24"><path d="M4 21l15.589-9L4 3z" fill="currentColor"></path></svg>';
     }
 };
 

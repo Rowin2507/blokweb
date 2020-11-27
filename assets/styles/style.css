@@ -4,7 +4,7 @@
   --color-green: #1ED760;
   --color-green-hover: #1DB954;
   --color-white: #FFFFFF;
-  --color-gray: #1E1E1E;
+  --color-gray: #282828;
   --color-dark: #0F0F0F;
   --color-black: #191414;
 }
@@ -54,42 +54,16 @@
   font-style: normal;
 }
 
-/* TIJDELIJK!? */
-/* @font-face {
-  font-family: Circular;
-  src: url("../fonts/circular-light.woff2");
-}
-@font-face {
-  font-family: Circular;
-  font-weight: 350;
-  src: url("../fonts/circular-book.woff2") format("opentype");
-}
-@font-face {
-  font-family: Circular;
-  font-weight: 400;
-  src: url("../fonts/circular-medium.woff2") format("opentype");
-}
-@font-face {
-  font-family: Circular;
-  src: url("../fonts/circular-bold.woff2");
-  font-weight: bold;
-}
-@font-face {
-  font-family: Circular;
-  font-weight: 800;
-  src: url("../fonts/circular-black.woff2") format("opentype");
-} */
-
 
 
 /* PREDEFINED ---------------------------------------------- */
-*, *::after, *::before {
+*, *:after, *:before {
   margin: 0;
   padding: 0;
   border: none;
   border-radius: 0;
   box-sizing: border-box;
-  outline: none;
+  outline: none; /* TIJDELIJK? */
 }
 body {
   position: relative;
@@ -131,8 +105,6 @@ header {
   width: 100%;
   background-color: transparent;
   z-index: 996;
-
-
 }
 header ul {
   display: flex;
@@ -157,6 +129,123 @@ header ul li svg path {
 
 
 
+/* FOOTER ----------- */
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 45px;
+  background-color: var(--color-gray);
+}
+
+footer .now-playing-bar {
+  position: relative;
+  padding-top: 3px;
+}
+footer .now-playing-bar-progress {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 3px;
+  background-color: rgba(255,255,255,0.3);
+}
+footer .now-playing-bar-progress:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 3px;
+  width: 30%;
+  background-color: var(--color-white);
+}
+footer .now-playing-bar-content {
+  display: flex;
+  flex-direction: row;
+}
+footer .now-playing-bar-content img {
+  height: 3.3em;
+}
+footer .now-playing-bar-content ul {
+  flex: 1;
+  overflow-x: auto;
+}
+footer .now-playing-bar-content ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 0.85em;
+  height: 100%;;
+}
+footer .now-playing-bar-content ul li h5 {
+  font-size: 0.85em;
+  font-weight: 400;
+}
+footer .now-playing-bar-content ul li p {
+  margin-top: -2px;
+  font-size: 0.85em;
+  opacity: 0.65;
+}
+footer .now-playing-bar-content button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+}
+footer .now-playing-bar-content button:nth-of-type(1) {
+  margin-right: 0.5em;
+}
+footer .now-playing-bar-content button svg {
+  height: 1.75em;
+  padding: 0 1em;
+}
+footer .now-playing-bar-content button svg path {
+  fill: var(--color-white);
+}
+
+footer nav ul {
+  padding-top: 0.65em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  list-style: none;
+  border-top: 1px solid rgba(0,0,0,0.25);
+}
+footer nav ul li {
+  width: 100%;
+}
+footer nav ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--color-white);
+  text-decoration: none;
+  text-align: center;
+}
+footer nav ul li a svg {
+  height: 1.75em;
+}
+footer nav ul li a svg path, footer nav ul li a svg rect {
+  fill: var(--color-white);
+  opacity: 0.75;
+}
+footer nav ul li:last-of-type a svg {
+  padding: 2px 0;
+}
+footer nav ul li a span {
+  display: block;
+  margin-top: 0.65em;
+  font-size: 0.75em;
+}
+
+
+
+
+
 
 /* HOME STYLING ---------------------------------------------- */
 /* HEADER ----------- */
@@ -165,7 +254,7 @@ body.home header ul {
 }
 
 /* MAIN ----------- */
-body.home::before {
+body.home:before {
   content: '';
   position: absolute;
   top: 0;
@@ -228,12 +317,20 @@ body.home main section ul li figcaption h4 {
 body.home main section ul li figcaption p {
   opacity: 0.65;
 }
-body.home main section.listen-again, body.home main section.popular-albums {
+body.home main section.listen-again, body.home main section.popular-albums, body.home main section.my-playlists {
   padding: 1.05em 0;
 }
-body.home main section.listen-again ul li img, body.home main section.popular-albums ul li img  {
+body.home main section.listen-again ul li img, body.home main section.popular-albums ul li img, body.home main section.my-playlists ul li img  {
   height: 9em;
 }
+
+
+
+
+
+
+
+
 
 
 
