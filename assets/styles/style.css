@@ -199,13 +199,12 @@ footer .now-playing-bar-content button:nth-of-type(1) {
   margin-right: 0.5em;
 }
 footer .now-playing-bar-content button svg {
-  height: 1.75em;
+  height: 1.95em;
   padding: 0 1em;
 }
 footer .now-playing-bar-content button svg path {
   fill: var(--color-white);
 }
-
 footer nav ul {
   padding-top: 0.425em;
   display: flex;
