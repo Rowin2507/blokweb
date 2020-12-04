@@ -66,6 +66,7 @@
   outline: none; /* TIJDELIJK? */
 }
 body {
+  display: flex;
   position: relative;
   margin: 0 auto;
   padding: 0;
@@ -75,6 +76,7 @@ body {
   font-style: normal;
   background-color: var(--color-dark);
   color: var(--color-white);
+  overflow: hidden;
   /* -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -104,7 +106,7 @@ header {
   padding-bottom: 7px;
   width: 100%;
   background-color: transparent;
-  z-index: 996;
+  z-index: 98;
 }
 header.hidden {
   display: none;
@@ -124,21 +126,22 @@ header ul li svg {
 header ul li svg path {
   fill: var(--color-white);
 }
-/* header ul li a {
-  display: inline-block;
-  padding: 8px 15px;
-  border-radius: 10px;
-} */
 
-
+/* MAIN ----------- */
+main {
+  height: 100vh;
+  overflow-y: auto;
+}
 
 /* FOOTER ----------- */
 footer {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: -1px;
+  z-index: 99;
 }
+/* NOW PLAYING BAR */
 footer .now-playing-bar {
   position: relative;
   padding-top: 2px;
@@ -216,7 +219,7 @@ footer .now-playing-bar-content ul {
   overflow-x: auto;
   white-space: nowrap;
   scroll-snap-type: x mandatory;
-  scroll-snap-align: ;
+  scroll-snap-align: center;
   width: 100%;
   height: 100%;  
 }
@@ -259,9 +262,79 @@ footer .now-playing-bar-content button svg {
 footer .now-playing-bar-content button svg path {
   fill: var(--color-white);
 }
+/* NOW PLAYING OVERLAY */
+footer .now-playing-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--color-gray);
+  text-align: center;
+  transform: translateY(calc(100% + 2px));
+  transition: 0.5s ease;
+  z-index: -1;
+}
+footer .now-playing-overlay.visible {
+  transform: translateY(0);
+}
+footer .now-playing-overlay ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-top: 50px;
+  width: 85%;
+  list-style: none;
+}
+footer .now-playing-overlay ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+footer .now-playing-overlay ul li svg {
+  height: 19px;
+}
+footer .now-playing-overlay ul li svg circle, footer .now-playing-overlay ul li svg path {
+  fill: var(--color-white);
+}
+footer .now-playing-overlay ul li h2 {
+  font-size: 0.85em;
+  font-weight: 500;
+}
+footer .now-playing-overlay ol {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  white-space: nowrap;
+  scroll-snap-type: x mandatory;
+  list-style: none;
+}
+footer .now-playing-overlay ol::-webkit-scrollbar {
+  display: none;
+}
+footer .now-playing-overlay img {
+  margin: 0 7.5vw;
+  width: 85vw;
+  scroll-snap-align: center;
+}
+
+
+
+
+
+/* FOOTER MAIN NAV */
 footer nav {
   background-color: var(--color-gray);
   padding-bottom: 2.0625em;
+  z-index: 1;
+  transition: 0.3s;
+}
+footer.hidden nav {
+  transform: translateY(100%);
 }
 footer nav ul {
   padding-top: 0.425em;
@@ -273,6 +346,10 @@ footer nav ul {
 }
 footer nav ul li {
   width: 100%;
+  opacity: 0.65;
+}
+footer nav ul li.active {
+  opacity: 1;
 }
 footer nav ul li a {
   display: flex;
@@ -288,7 +365,6 @@ footer nav ul li a svg {
 }
 footer nav ul li a svg path, footer nav ul li a svg rect {
   fill: var(--color-white);
-  opacity: 0.75;
 }
 footer nav ul li:last-of-type a svg {
   padding: 2px 0;
@@ -328,9 +404,6 @@ body.home header ul {
 }
 
 /* MAIN ----------- */
-body.home {
-  padding-bottom: 10em;
-}
 body.home:before {
   content: '';
   position: absolute;
@@ -342,6 +415,9 @@ body.home:before {
   background: linear-gradient(340deg, rgba(15,15,15,1) 49%, rgba(24,27,22,1) 58%, rgba(31,37,27,1) 65%, rgba(36,44,31,1) 68%, rgba(49,62,41,1) 74%, rgba(65,84,53,1) 80%, rgba(119,156,93,1) 100%);
   opacity: 0.75;
   z-index: -1;
+}
+body.home main {
+  padding-bottom: 9em;
 }
 body.home main h2 {
   padding-left: 5%;
@@ -357,6 +433,7 @@ body.home main section ol, body.home main section ul {
   flex-direction: row;
   list-style: none;
   overflow-x: auto;
+  max-width: min-content;
 }
 body.home main section ol::-webkit-scrollbar, body.home main section ul::-webkit-scrollbar {
   display: none;
