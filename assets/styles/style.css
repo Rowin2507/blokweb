@@ -121,7 +121,7 @@ header ul {
 }
 header ul li button {background-color: transparent;}
 header ul li svg {
-  height: 22px;
+  height: 20px;
 }
 header ul li svg path {
   fill: var(--color-white);
@@ -256,7 +256,7 @@ footer .now-playing-bar-content button:nth-of-type(1) {
   margin-right: 0.5em;
 }
 footer .now-playing-bar-content button svg {
-  height: 2em;
+  height: 1.9em;
   padding: 0 1em;
 }
 footer .now-playing-bar-content button svg path {
@@ -286,7 +286,6 @@ footer .now-playing-overlay ul {
   flex-direction: row;
   justify-content: space-between;
   margin: 0 auto;
-  padding-top: 50px;
   width: 85%;
   list-style: none;
 }
@@ -495,9 +494,9 @@ body.home main section.listen-again ul li img, body.home main section.popular-al
 /* STYLING FULL SCREEN APP ONLY - IPHONE X/XS/11/12 ------------------------------------------- */
 
 /* SAFE AREA */
-header, main {
+header, main, footer .now-playing-overlay ul {
   /* padding-top: 44px; */
-  padding-top: 50px;
+  padding-top: 60px;
 }
 /* SAFE AREA MARQUEE FIX */
 /* .category-page main .marquee a {
