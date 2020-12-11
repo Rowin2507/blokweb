@@ -63,6 +63,7 @@
   border: none;
   border-radius: 0;
   box-sizing: border-box;
+  font-family: 'Circular Spotify Tx T', sans-serif;
   outline: none; /* TIJDELIJK? */
 }
 body {
@@ -130,6 +131,7 @@ header ul li svg path {
 /* MAIN ----------- */
 main {
   height: 100vh;
+  width: 100vw;
   overflow-y: auto;
 }
 
@@ -281,6 +283,17 @@ footer .now-playing-overlay {
 footer .now-playing-overlay.visible {
   transform: translateY(0);
 }
+footer .now-playing-overlay:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(40,40,40); /* https://cssgradient.io/ */
+  background: linear-gradient(180deg, rgba(40,40,40,0.1) 0%, rgba(40,40,40,0.35) 100%);
+  z-index: -1;
+}
 footer .now-playing-overlay ul {
   display: flex;
   flex-direction: row;
@@ -300,6 +313,10 @@ footer .now-playing-overlay ul li svg {
 footer .now-playing-overlay ul li svg circle, footer .now-playing-overlay ul li svg path {
   fill: var(--color-white);
 }
+footer .now-playing-overlay ul li a {
+  text-decoration: none;
+  color: var(--color-white);
+}
 footer .now-playing-overlay ul li h2 {
   font-size: 0.85em;
   font-weight: 500;
@@ -315,12 +332,33 @@ footer .now-playing-overlay ol {
 footer .now-playing-overlay ol::-webkit-scrollbar {
   display: none;
 }
+footer .now-playing-overlay ol li {
+  padding: 2.5em 0;
+}
 footer .now-playing-overlay img {
   margin: 0 7.5vw;
   width: 85vw;
   scroll-snap-align: center;
+  box-shadow: 0 0.25em 2.5em rgba(0,0,0,0.2);
 }
-
+footer .now-playing-overlay > section {
+  margin: 0 auto;
+  width: 85%;
+  text-align: left;
+}
+footer .now-playing-overlay > section h3 {
+  margin-bottom: 0.05em;
+  font-size: 1.35em;
+  font-weight: 500;
+}
+footer .now-playing-overlay > section p {
+  font-size: 1em;
+  font-weight: 400;
+  opacity: 0.65;
+}
+footer .now-playing-overlay > section:last-of-type {
+  padding-bottom: 4.5em;
+}
 
 
 
@@ -482,11 +520,173 @@ body.home main section.listen-again ul li img, body.home main section.popular-al
 
 
 
+/* PLAYLIST STYLING ---------------------------------------------- */
+/* HEADER ----------- */
+body.playlist header {
+  display: none !important;
+}
 
+/* MAIN ----------- */
+body.playlist main > section:nth-of-type(1) {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+}
+body.playlist main > section:nth-of-type(1):before {
+  content: '';
+  position: absolute;
+  top: -55px;
+  left: -5vw;
+  height: calc(100% + 55px);
+  width: 100vw;
+  background: rgb(254,196,9);
+  background: linear-gradient(180deg, rgba(254,196,9,1) 0%, rgba(254,196,9,0) 100%);
+  opacity: 0.75;
+  z-index: -1;
+}
+body.playlist main section > section:nth-of-type(1) {
+  display: flex;
+  flex-direction: row;
+}
+body.playlist main section > section:nth-of-type(1) > button {
+  padding: 0.55em 1em;
+  margin-bottom: 2.75em;
+  font-size: 0.85em;
+  font-weight: 500;
+  border-radius: 0.3em;
+  background-color: rgba(255,255,255,0.15);
+  color: rgba(255,255,255,0.65);
+}
+body.playlist main section > section:nth-of-type(1) > button:first-of-type {
+  flex: 1;
+  margin-right: 0.65em;
+  text-align: left;
+}
+body.playlist main section > section:nth-of-type(1) > button svg {
+  height: 1.25em;
+  vertical-align: bottom;
+  transform: translateY(-2px) translateX(-5px);
+}
+body.playlist main section > section:nth-of-type(2) {
+  display: flex;
+  flex-direction: column;
+}
+body.playlist main section > img {
+  margin: 0 auto;
+  width: 60%;
+}
+body.playlist main section > h2 {
+  margin-top: 0.9em;
+  margin-bottom: 0.5em;
+  font-size: 1.35em;
+  font-weight: 600;
+}
+body.playlist main section > p {
+  font-size: 0.8em;
+  opacity: 0.65;
+}
+body.playlist main section > a {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1em 0;
+  height: 100%;
+  width: fit-content;
+  text-decoration: none;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--color-white);
+}
+body.playlist main section > a img {
+  margin-right: 0.65em;
+  height: 1.65em;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: var(--color-white);
+  transform: translateY(-1px);
+}
+body.playlist main section > section:nth-of-type(2) > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  list-style: none;
+  margin-top: 0.5em;
+}
+body.playlist main section > section:nth-of-type(2) > ul li {
+  margin: 0 0.65em;
+}
+body.playlist main section > section:nth-of-type(2) > ul li:first-of-type {
+  margin-left: 0;
+}
+body.playlist main section > section:nth-of-type(2) > ul li:nth-of-type(3) {
+  margin-right: 0;
+}
+body.playlist main section > section:nth-of-type(2) > ul li:last-of-type {
+  position: relative;
+  margin-left: auto;
+  margin-right: 0;
+}
+body.playlist main section > section:nth-of-type(2) > ul li:last-of-type button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 100px;
+  height: 4em;
+  width: 4em;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  border: none;
+  transform: translateY(-50%);
+}
 
+body.playlist main > section:nth-of-type(2) {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
 
-
-
+  height: 200vh; /* TIJDELIJK */
+}
+body.playlist main > section:nth-of-type(2) > ul {
+  list-style: none;
+}
+body.playlist main > section:nth-of-type(2) > ul li {
+  display: flex;
+  flex-direction: row;
+  margin: 1em 0;
+}
+body.playlist main > section:nth-of-type(2) > ul li img {
+  height: 3em;
+  margin-right: 0.75em;
+}
+body.playlist main > section:nth-of-type(2) > ul li span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.playlist main > section:nth-of-type(2) > ul li h4 {
+  font-weight: 500;
+}
+body.playlist main > section:nth-of-type(2) > ul li p {
+  font-size: 0.8em;
+  opacity: 0.65;
+}
+body.playlist main > section:nth-of-type(2) > ul li button {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+  background-color: transparent;
+}
+body.playlist main > section:nth-of-type(2) > ul li button svg {
+  height: 19px;
+  opacity: 0.65;
+}
+body.playlist main > section:nth-of-type(2) > ul li button svg circle {
+  fill: var(--color-white);
+}
 
 
 

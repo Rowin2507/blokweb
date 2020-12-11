@@ -74,11 +74,12 @@ function togglePlay() {
 
 // NOW PLAYING OVERLAY ALBUM BG-COLOR
 var nowPlayingOverlay = document.querySelector("footer .now-playing-overlay");
-var nowPlayingAlbum = document.querySelector("footer .now-playing-overlay img.active-album");
+var nowPlayingAlbum = document.querySelector("footer .now-playing-overlay li.now-playing img");
 function nowPlayingOverlayImage() {
-    var nowPlayingBackgroundColor = nowPlayingAlbum.getAttribute("album-color"); // https://stackoverflow.com/questions/33760520/get-data-attributes-in-javascript-code
-    nowPlayingOverlay.style.backgroundColor = nowPlayingBackgroundColor;
-    console.log(nowPlayingBackgroundColor);
+    nowPlayingAlbum.scrollIntoView();
+    // var nowPlayingBackgroundColor = nowPlayingAlbum.getAttribute("album-color"); // https://stackoverflow.com/questions/33760520/get-data-attributes-in-javascript-code
+    // nowPlayingOverlay.style.backgroundColor = nowPlayingBackgroundColor;
+    // console.log(nowPlayingBackgroundColor);
 }
 nowPlayingOverlayImage();
 
@@ -87,6 +88,72 @@ nowPlayingOverlayImage();
 
 
 
+
+
+
+// var nowPlayingOverlayAlbumList = document.querySelector("footer .now-playing-overlay ol");
+
+// nowPlayingOverlayAlbumList.addEventListener("scroll", () => {
+
+//     var myStyle = document.querySelector("footer .now-playing-overlay img.now-playing").offsetLeft;
+
+//     if(myStyle < 0){
+//          console.log("nope");
+//     } else {
+//         console.log("prima joh");
+//     }
+// });
+
+
+var viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+// const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+console.log("Viewport breedte: " + viewportWidth + "px");
+
+var nowPlayingOverlayAlbumList = document.querySelector("footer .now-playing-overlay ol");
+nowPlayingOverlayAlbumList.addEventListener("scroll", () => {
+    var nowPlayingOverlayVisibleAlbumItem = (nowPlayingOverlayAlbumList.scrollLeft / viewportWidth) + 1;
+    
+    // CHECK IF SCROLL VALUE IS INTEGER
+    if (nowPlayingOverlayVisibleAlbumItem % 1 === 0) { // https://stackoverflow.com/questions/14636536/how-to-check-if-a-variable-is-an-integer-in-javascript
+        nowPlayingOverlayVisibleListItems = document.querySelectorAll("footer .now-playing-overlay ol li");
+        nowPlayingOverlayVisibleListItem = document.querySelector("footer .now-playing-overlay ol li:nth-of-type(" + nowPlayingOverlayVisibleAlbumItem + ")");
+        nowPlayingOverlayVisibleAlbum = document.querySelector("footer .now-playing-overlay ol li:nth-of-type(" + nowPlayingOverlayVisibleAlbumItem + ") img");
+        
+        // REMOVE & ADD CLASS TO ELEMENT(S)
+        // https://stackoverflow.com/questions/46175432/add-active-class-to-current-element-with-js-not-jquery
+        var nowPlayingOverlayActiveAlbum = document.querySelector('.now-playing');
+        nowPlayingOverlayActiveAlbum.className = nowPlayingOverlayActiveAlbum.className.replace("now-playing", "");
+        nowPlayingOverlayVisibleListItem.className += "now-playing";
+
+        // CHANGE BG COLOR PER ALBUM
+        var nowPlayingBackgroundColor = nowPlayingOverlayVisibleAlbum.getAttribute("album-color"); // https://stackoverflow.com/questions/33760520/get-data-attributes-in-javascript-code
+        nowPlayingOverlay.style.backgroundColor = nowPlayingBackgroundColor;
+        console.log("Kleur: " + nowPlayingBackgroundColor);
+        console.log(nowPlayingOverlayVisibleAlbumItem);
+
+        // ADD "NOW-PLAYING" CLASS TO LIST ITEM (CURRENT ALBUM)
+        
+
+
+        
+
+        
+        // var nowPlayingOverlayAlbums = document.querySelectorAll("footer .now-playing-overlay ol li");
+        // for (var i = 0; i < nowPlayingOverlayAlbums.length; i++) {
+        //     nowPlayingOverlayAlbums[i].addEventListener('click', function() {
+        //       var selectedItem = document.querySelectorAll('.schedule-item.selected');
+        //       selectedItem[0].className = selectedItem[0].className.replace(' selected', '');
+        //       this.className += ' selected';
+        //     });
+        // }
+
+        
+    }
+//   console.log("Scrolled album: " + nowPlayingOverlayAlbumList.scrollLeft + "px");
+});
+
+
+// https://stackoverflow.com/questions/14636536/how-to-check-if-a-variable-is-an-integer-in-javascript
 
 
 
