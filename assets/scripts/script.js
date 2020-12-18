@@ -1,21 +1,79 @@
-// HEADER FADE OUT ON SCROLL ----------------------
-// https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
-var header = document.querySelector("header");
-var main = document.querySelector("main");
-const checkpoint = 75;
+var body = document.querySelector("body");
 
-main.addEventListener("scroll", () => {
-  const currentScroll = main.scrollTop;
-  if (currentScroll <= checkpoint) {
-    opacity = 1 - currentScroll / checkpoint;
-    header.classList.remove("hidden");
-  } else {
-    opacity = 0;
-    header.classList.add("hidden");
-  }
-  header.style.opacity = opacity;
-  console.log("Scrolled in main: " + main.scrollTop + "px");
-});
+// CHECK IF BODY HAS CLASS (HOME)
+if (body.classList.contains("home")) {
+    // HEADER (HOME) FADE OUT ON SCROLL ----------------------
+    // https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
+    function headerHomeScroll() {
+        var headerHome = document.querySelector("header");
+        var main = document.querySelector("main");
+        const checkpoint = 75;
+
+        main.addEventListener("scroll", () => {
+            const currentScroll = main.scrollTop;
+            if (currentScroll <= checkpoint) {
+                opacity = 1 - currentScroll / checkpoint;
+                headerHome.classList.remove("hidden");
+            } else {
+                opacity = 0;
+                headerHome.classList.add("hidden");
+            }
+            headerHome.style.opacity = opacity;
+            // console.log("Scrolled in main: " + main.scrollTop + "px");
+        });
+    }
+    headerHomeScroll();
+ }
+
+
+
+// CHECK IF BODY HAS CLASS (PLAYLIST) ----------------------
+if (body.classList.contains("playlist")) {
+    // HEADER (PLAYLIST) FADE IN ON SCROLL
+    function headerPlaylistScroll() {
+        var playlistTitleOffsetTop = document.querySelector("main section > h2").offsetTop;
+        var headerPlaylist = document.querySelector("header");
+        var main = document.querySelector("main");
+        const checkpoint = playlistTitleOffsetTop - 55;
+
+        main.addEventListener("scroll", () => {
+            // FADE IN HEADER
+            const currentScroll = main.scrollTop;
+            if (currentScroll <= checkpoint) {
+                headerPlaylist.classList.remove("scrolled");
+            } else {
+                headerPlaylist.classList.add("scrolled");
+            }
+
+            // FADE OUT SEARCH INPUT & BUTTON
+            var playlistSearch = document.querySelector("body.playlist main section > section:nth-of-type(1)");
+            var CoverArtOffsetTop = document.querySelector("body.playlist main section > img").offsetTop - 55;
+            if (currentScroll <= CoverArtOffsetTop) {
+                opacity = 1 - currentScroll / CoverArtOffsetTop;
+            } else {
+                opacity = 0;
+            }
+            playlistSearch.style.opacity = opacity;
+
+            // MAKE PLAY BUTTON STICKY
+            // var playlistSearch = document.querySelector("body.playlist main section > section:nth-of-type(1)");
+            var PlayButton = document.querySelector("body.playlist main section > section:nth-of-type(2) > ul li:last-of-type");
+            var PlayButtonOffsetTop = PlayButton.offsetTop;
+            console.log(PlayButtonOffsetTop + " px");
+            if (currentScroll <= PlayButtonOffsetTop - 48) {
+                PlayButton.classList.remove("scrolled");
+            } else {
+                PlayButton.classList.add("scrolled");
+            }
+        });
+    }
+    headerPlaylistScroll();
+
+    // SCROLL TO COVER ART 
+    var CoverArtPlaylist = document.querySelector("body.playlist main section > section:nth-of-type(2)").scrollIntoView();
+
+    
+}
 
 
 
@@ -71,7 +129,6 @@ function togglePlay() {
 
 
 // NOW PLAYING OVERLAY ----------------------
-
 // NOW PLAYING OVERLAY ALBUM BG-COLOR
 var nowPlayingOverlay = document.querySelector("footer .now-playing-overlay");
 var nowPlayingAlbum = document.querySelector("footer .now-playing-overlay li.now-playing img");
@@ -83,30 +140,8 @@ function nowPlayingOverlayImage() {
 }
 nowPlayingOverlayImage();
 
-
-
-
-
-
-
-
-
-// var nowPlayingOverlayAlbumList = document.querySelector("footer .now-playing-overlay ol");
-
-// nowPlayingOverlayAlbumList.addEventListener("scroll", () => {
-
-//     var myStyle = document.querySelector("footer .now-playing-overlay img.now-playing").offsetLeft;
-
-//     if(myStyle < 0){
-//          console.log("nope");
-//     } else {
-//         console.log("prima joh");
-//     }
-// });
-
-
+// NOW PLAYING OVERLAY SCROLL VALUES & FUNCTIONS
 var viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-// const vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
 console.log("Viewport breedte: " + viewportWidth + "px");
 
 var nowPlayingOverlayAlbumList = document.querySelector("footer .now-playing-overlay ol");
@@ -154,74 +189,6 @@ nowPlayingOverlayAlbumList.addEventListener("scroll", () => {
 
 
 // https://stackoverflow.com/questions/14636536/how-to-check-if-a-variable-is-an-integer-in-javascript
-
-
-
-
-
-// // GEST MOST DOMINANT COLOR OF IMAGE
-// var rgb = getAverageRGB(document.getElementById('test'));
-// document.body.style.backgroundColor = 'rgb('+rgb.r+','+rgb.g+','+rgb.b+')';
-
-// function getAverageRGB(imgEl) {
-
-// var blockSize = 5, // only visit every 5 pixels
-//     defaultRGB = {r:0,g:0,b:0}, // for non-supporting envs
-//     canvas = document.createElement('canvas'),
-//     context = canvas.getContext && canvas.getContext('2d'),
-//     data, width, height,
-//     i = -4,
-//     length,
-//     rgb = {r:0,g:0,b:0},
-//     count = 0;
-    
-// if (!context) {
-//     return defaultRGB;
-// }
-
-// height = canvas.height = imgEl.naturalHeight || imgEl.offsetHeight || imgEl.height;
-// width = canvas.width = imgEl.naturalWidth || imgEl.offsetWidth || imgEl.width;
-
-// context.drawImage(imgEl, 0, 0);
-
-// try {
-//     data = context.getImageData(0, 0, width, height);
-// } catch(e) {
-//     /* security error, img on diff domain */alert('x');
-//     return defaultRGB;
-// }
-
-// length = data.data.length;
-
-// while ( (i += blockSize * 4) < length ) {
-//     ++count;
-//     rgb.r += data.data[i];
-//     rgb.g += data.data[i+1];
-//     rgb.b += data.data[i+2];
-// }
-
-// // ~~ used to floor values
-// rgb.r = ~~(rgb.r/count);
-// rgb.g = ~~(rgb.g/count);
-// rgb.b = ~~(rgb.b/count);
-
-// console.log(test);
-// return rgb;
-
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

@@ -523,10 +523,66 @@ body.home main section.listen-again ul li img, body.home main section.popular-al
 /* PLAYLIST STYLING ---------------------------------------------- */
 /* HEADER ----------- */
 body.playlist header {
-  display: none !important;
+  background-color: transparent;
+  transition: 0.25s;
+  overflow: hidden;
+}
+body.playlist header:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: -1px;
+  background: linear-gradient(180deg, rgba(181,141,10,1) 0%, rgba(85,67,13,1) 100%);
+  z-index: 2;
+  opacity: 0;
+  transition: 0.25s;
+}
+body.playlist header.scrolled:before {
+  opacity: 1;
+}
+body.playlist header ul {
+  position: relative;
+  padding-bottom: 0.65em;
+  z-index: 3;
+}
+body.playlist header ul li {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 18px;
+}
+body.playlist header ul li a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 0.5em;
+  margin-left: -0.5em;
+}
+body.playlist header ul li a svg {
+  height: 1em;
+}
+body.playlist header ul li h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: 0.3s;
+}
+body.playlist header.scrolled ul li h2 {
+  opacity: 1;
+  transform: translateY(0);
 }
 
+
 /* MAIN ----------- */
+body.playlist main {
+  padding-bottom: 9em;
+}
 body.playlist main > section:nth-of-type(1) {
   position: relative;
   margin: 0 auto;
@@ -547,10 +603,10 @@ body.playlist main > section:nth-of-type(1):before {
 body.playlist main section > section:nth-of-type(1) {
   display: flex;
   flex-direction: row;
+  padding-top: 2.75em;
 }
 body.playlist main section > section:nth-of-type(1) > button {
   padding: 0.55em 1em;
-  margin-bottom: 2.75em;
   font-size: 0.85em;
   font-weight: 500;
   border-radius: 0.3em;
@@ -570,6 +626,7 @@ body.playlist main section > section:nth-of-type(1) > button svg {
 body.playlist main section > section:nth-of-type(2) {
   display: flex;
   flex-direction: column;
+  padding-top: 2.5em;
 }
 body.playlist main section > img {
   margin: 0 auto;
@@ -610,44 +667,86 @@ body.playlist main section > section:nth-of-type(2) > ul {
   flex-direction: row;
   justify-content: flex-start;
   list-style: none;
-  margin-top: 0.5em;
+  margin-top: 0.75em;
 }
 body.playlist main section > section:nth-of-type(2) > ul li {
-  margin: 0 0.65em;
+  margin: 0 0.75em;
 }
 body.playlist main section > section:nth-of-type(2) > ul li:first-of-type {
   margin-left: 0;
 }
+body.playlist main section > section:nth-of-type(2) > ul li:first-of-type svg {
+  height: 1.5em;
+  opacity: 0.85;
+}
+body.playlist main section > section:nth-of-type(2) > ul li:first-of-type svg path {
+  fill: var(--color-white);
+}
+body.playlist main section > section:nth-of-type(2) > ul li:nth-of-type(2) svg {
+  height: 1.25em;
+  opacity: 0.75;
+  transform: translateY(2.5px);
+}
 body.playlist main section > section:nth-of-type(2) > ul li:nth-of-type(3) {
   margin-right: 0;
+}
+body.playlist main section > section:nth-of-type(2) > ul li:nth-of-type(3) svg {
+  height: 1.15em;
+  opacity: 0.75;
+  transform: translateY(4px);
+}
+body.playlist main section > section:nth-of-type(2) > ul li:nth-of-type(3) svg circle {
+  fill: var(--color-white);
 }
 body.playlist main section > section:nth-of-type(2) > ul li:last-of-type {
   position: relative;
   margin-left: auto;
   margin-right: 0;
+  z-index: 99;
+  height: 4.25em;
 }
 body.playlist main section > section:nth-of-type(2) > ul li:last-of-type button {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: sticky;
-  top: 100px;
-  height: 4em;
-  width: 4em;
+  position: relative;
+  /* top: 100px; */
+  height: 4.25em;
+  width: 4.25em;
   border-radius: 50%;
   background-color: var(--color-green);
   color: var(--color-white);
   border: none;
   transform: translateY(-50%);
 }
-
+body.playlist main section > section:nth-of-type(2) > ul li.scrolled button {
+  position: fixed;
+  top: 102px;
+  right: 5vw;
+}
+body.playlist main section > section:nth-of-type(2) > ul li:last-of-type button svg {
+  height: 48%;
+  transform: translateX(1px);
+}
+body.playlist main section > section:nth-of-type(2) > ul li:last-of-type button:after {
+  content: '';
+  position: absolute;
+  right: -0.25em;
+  bottom: -0.25em;
+  height: 1.55em;
+  width: 1.55em;
+  background-color: var(--color-white);
+  background-image: url("../images/icons/shuffle-bold.svg");
+  background-repeat: no-repeat;
+  background-size: 60%;
+  background-position: 60% 57%;
+  border-radius: 50%;
+}
 body.playlist main > section:nth-of-type(2) {
   position: relative;
-  margin: 0 auto;
+  margin: -1.5em auto 0 auto;
   width: 90%;
-
-  height: 200vh; /* TIJDELIJK */
 }
 body.playlist main > section:nth-of-type(2) > ul {
   list-style: none;
