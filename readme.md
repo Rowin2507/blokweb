@@ -34,7 +34,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 ### Stand van zaken
 De periode tussen week 1 en week 3 verliep erg goed zonder echte problemen. Ik heb mij in deze periode wat meer gefocust op functionaliteiten toevoegen in plaats van nieuwe pagina's maken/bewerken. Ik heb zo met JavaScript een overlay functie gemaakt, om de albums te kunnen weergeven als een overlay. Daarnaast heb ik ook de header (home) werkend gemaakt d.mv.v. JavaScript en nog een aantal kleine dingen gewijzigd. Ik ben ook begonnen met het opzetten van de playlist pagina.
 
-<img src="assets/images/github/Spotify-overlay-week5.png" width="100%" alt="Een screenshot van de overlay door mij nagemaakt (beginfase)">
+<img src="assets/images/github/Spotify-overlay-week5.png" width="375px" alt="Een screenshot van de overlay door mij nagemaakt (beginfase)">
 
 ## Voortgang 1 (week 3)
 
