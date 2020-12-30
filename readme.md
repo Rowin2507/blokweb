@@ -10,6 +10,9 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 2. https://www.w3schools.com/css/css3_variables.asp
 3. https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
 4. https://www.geeksforgeeks.org/create-a-music-player-using-javascript/
+5. https://stackoverflow.com/questions/14636536/how-to-check-if-a-variable-is-an-integer-in-javascript
+6. https://stackoverflow.com/questions/33760520/get-data-attributes-in-javascript-code
+7. https://stackoverflow.com/questions/68165/javascript-to-scroll-long-page-to-div
 
 
 
