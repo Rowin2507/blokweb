@@ -26,7 +26,9 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 ## Voortgang 3 (week 6)
 
 ### Stand van zaken
-...
+De afgelopen week ben ik voornamelijk bezig geweest met het maken van de playlist pagina. Deze pagina is de tweede van mijn website. Ik heb ervoor gekozen om een fictieve playlist te maken die erg actueel is (corona) met wat humor. Voor nu is deze afspeellijst nog statisch, maar ik wil proberen om dit via JavaScript werkend te maken (nummers aan kunnen klikken, etc.). 
+
+Ook ben ik bezig geweest met het maken van een muziek speler. Ik had al het een en ander voor elkaar gekregen (zonder bronnen), maar kwam er niet helemaal meer uit. Ik heb dus op internet gezocht naar "plain JavaScript Music Player" en ben toen op een erg goede bron terecht gekomen. Deze bron ga ik gebruiken als basis voor mijn muziek speler (zie bronvermelding).
 
 <img src="assets/images/github/Spotify-playlist-week6.png" width="375px" alt="Een screenshot van een playlist pagina">
 
