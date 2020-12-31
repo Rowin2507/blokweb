@@ -14,6 +14,7 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 6. https://stackoverflow.com/questions/33760520/get-data-attributes-in-javascript-code
 7. https://stackoverflow.com/questions/68165/javascript-to-scroll-long-page-to-div
 8. https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event
+9. https://stackoverflow.com/questions/12622465/creating-a-div-element-inside-a-div-element-in-javascript
 
 
 
