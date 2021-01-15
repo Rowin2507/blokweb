@@ -71,6 +71,10 @@ if (body.classList.contains("playlist")) {
 
     // SCROLL TO COVER ART 
     var CoverArtPlaylist = document.querySelector("body.playlist main section > section:nth-of-type(2)").scrollIntoView(); 
+
+    // PLAYLIST SHUFFLE BUTTON (HEADER)
+    var playlistShuffleButton = document.querySelector("body.playlist main section > section:nth-of-type(2) > ul li:last-of-type button");
+    playlistShuffleButton.addEventListener("click", nextTrack);
 }
 
 
@@ -84,7 +88,7 @@ window.addEventListener('load', function() {
 
 // NOW PLAYING OVERLAY TOGGLE - (DIS)APPEAR
 var nowPlayingBarIMG = document.querySelector("footer .now-playing-bar-content img");
-var nowPlayingBarSpan = document.querySelector("footer .now-playing-bar-content span");
+var nowPlayingBarSpan = document.querySelector("footer .now-playing-bar-content .now-playing-bar-info");
 var nowPlayingOverlay = document.querySelector("footer .now-playing-overlay");
 var nowPlayingOverlayClose = document.querySelector("footer .now-playing-overlay > ul li:first-of-type");
 var footer = document.querySelector("footer");
@@ -154,8 +158,6 @@ nowPlayingOverlayAlbumList.addEventListener("scroll", () => {
 
 // MUSIC PLAYER (OVERLAY) ----------------------
 // https://www.geeksforgeeks.org/create-a-music-player-using-javascript/
-// let now_playing = document.querySelector(".now-playing");
-// let track_art = document.querySelector(".track-art");
 let track_name = document.querySelector("footer .now-playing-overlay > section h3");
 let track_artist = document.querySelector("footer .now-playing-overlay > section p");
 let playlistAlbums = document.querySelector("footer .now-playing-overlay ol");
@@ -213,6 +215,7 @@ function loadAlbums(track_index) {
         var overlayAlbumImg = document.createElement("img");
         overlayAlbum.setAttribute("album-order", (i + 1));
         overlayAlbumImg.src = track_list[i].image; 
+        overlayAlbumImg.alt = track_list[i].name; 
         
         // OVERLAY - SCROLL TO ACTIVE ALBUM
         overlayAlbumAttribute = overlayAlbum.getAttribute("album-order");
@@ -244,39 +247,24 @@ function loadTrack(track_index) {
     curr_track.load();
 
     // Update details of the track
-//   track_art.style.backgroundImage = "url(" + track_list[track_index].image + ")";
     track_name.textContent = track_list[track_index].name;
     track_artist.textContent = track_list[track_index].artist;
 
     // APPLY BACKGROUND COLOR
     nowPlayingOverlay.style.backgroundColor = track_list[track_index].color;
     console.log("Overlay-color: " + track_list[track_index].color);
-    // now_playing.textContent = "PLAYING " + (track_index + 1) + " OF " + track_list.length;
 
     // Set an interval of 1000 milliseconds for updating the seek slider
     updateTimer = setInterval(seekUpdate, 1000);
 
     // NOW PLAYING BAR - CHANGE CURRENT SONG INFO
-    var nowPlayingBarH5 = document.querySelector("footer .now-playing-bar-content span h5");
-    var nowPlayingBarP = document.querySelector("footer .now-playing-bar-content span p");
+    var nowPlayingBarH5 = document.querySelector("footer .now-playing-bar-content .now-playing-bar-info h5");
+    var nowPlayingBarP = document.querySelector("footer .now-playing-bar-content .now-playing-bar-info p");
     var nowPlayingBarImg = document.querySelector("footer .now-playing-bar-content img");
     nowPlayingBarH5.textContent = track_list[track_index].name;
     nowPlayingBarP.textContent = track_list[track_index].artist;
     nowPlayingBarImg.src = track_list[track_index].image; 
-
-    // REMOVE & ADD CLASS TO ELEMENT(S)
-    // https://stackoverflow.com/questions/46175432/add-active-class-to-current-element-with-js-not-jquery
-    // var nowPlayingBarActiveSong = document.querySelector('footer .now-playing-overlay ol li.now-playing');
-    // var nowPlayingBarVisibleItem = document.querySelector("footer .now-playing-bar-info li:nth-of-type(" + (track_index + 1) + ")");
-    // var nowPlayingBarPlaying = document.querySelector("footer .now-playing-bar-info li.now-playing");
-    // nowPlayingBarPlaying.className = nowPlayingBarPlaying.className.replace("now-playing", "");
-    // nowPlayingBarVisibleItem.className += "now-playing";
-
-    // // nowPlayingBarPlaying.scrollIntoView();
-    // nowPlayingBarVisibleItem.setAttribute('tabindex', '-1');
-    // nowPlayingBarVisibleItem.focus();
-    // nowPlayingBarVisibleItem.removeAttribute('tabindex');
-    // console.log(nowPlayingBarVisibleItem);
+    nowPlayingBarImg.alt = track_list[track_index].name; 
 
     // Move to the next track if the current one finishes playing
     curr_track.addEventListener("ended", nextTrack);
@@ -300,8 +288,9 @@ function playTrack() {
     curr_track.play();
     isPlaying = true;
     
-    playpause_btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.87 111.87"><defs><style>.cls-1{fill:#fff;}</style></defs><title>pause</title><g id="Laag_2" data-name="Laag 2"><g id="Laag_1-2" data-name="Laag 1"><path class="cls-1" d="M55.94,0a55.94,55.94,0,1,0,55.93,55.94A55.93,55.93,0,0,0,55.94,0ZM48.87,74.69a1.75,1.75,0,0,1-1.75,1.75h-6.6a1.75,1.75,0,0,1-1.75-1.75V37.92a1.75,1.75,0,0,1,1.75-1.75h6.6a1.75,1.75,0,0,1,1.75,1.75Zm24.23,0a1.75,1.75,0,0,1-1.75,1.75h-6.6A1.75,1.75,0,0,1,63,74.69V37.92a1.75,1.75,0,0,1,1.75-1.75h6.6a1.75,1.75,0,0,1,1.75,1.75Z"/></g></g></svg>';
+    playpause_btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.87 111.87"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Laag_2" data-name="Laag 2"><g id="Laag_1-2" data-name="Laag 1"><path class="cls-1" d="M55.94,0a55.94,55.94,0,1,0,55.93,55.94A55.93,55.93,0,0,0,55.94,0ZM48.87,74.69a1.75,1.75,0,0,1-1.75,1.75h-6.6a1.75,1.75,0,0,1-1.75-1.75V37.92a1.75,1.75,0,0,1,1.75-1.75h6.6a1.75,1.75,0,0,1,1.75,1.75Zm24.23,0a1.75,1.75,0,0,1-1.75,1.75h-6.6A1.75,1.75,0,0,1,63,74.69V37.92a1.75,1.75,0,0,1,1.75-1.75h6.6a1.75,1.75,0,0,1,1.75,1.75Z"/></g></g></svg>';
     nowPlayingPlayPause.innerHTML = '<svg viewBox="0 0 24 24"><path d="M5 3h4v18H5V3zm10 0h4v18h-4V3z" fill="currentColor"></path></svg>';
+    document.querySelector("footer .now-playing-bar-content ul li:nth-of-type(3) button").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.87 111.87"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Laag_2" data-name="Laag 2"><g id="Laag_1-2" data-name="Laag 1"><path class="cls-1" d="M55.94,0a55.94,55.94,0,1,0,55.93,55.94A55.93,55.93,0,0,0,55.94,0ZM48.87,74.69a1.75,1.75,0,0,1-1.75,1.75h-6.6a1.75,1.75,0,0,1-1.75-1.75V37.92a1.75,1.75,0,0,1,1.75-1.75h6.6a1.75,1.75,0,0,1,1.75,1.75Zm24.23,0a1.75,1.75,0,0,1-1.75,1.75h-6.6A1.75,1.75,0,0,1,63,74.69V37.92a1.75,1.75,0,0,1,1.75-1.75h6.6a1.75,1.75,0,0,1,1.75,1.75Z"/></g></g></svg>';
     console.log("Hudig album: " + track_index);
 }
 
@@ -309,8 +298,9 @@ function pauseTrack() {
     curr_track.pause();
     isPlaying = false;
 
-    playpause_btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.87 111.87"><defs><style>.cls-1{fill:#fff;}</style></defs><title>play</title><g id="Laag_2" data-name="Laag 2"><g id="Laag_1-2" data-name="Laag 1"><path class="cls-1" d="M55.94,0a55.94,55.94,0,1,0,55.93,55.94A55.93,55.93,0,0,0,55.94,0ZM75.71,57.51,44.87,75.34a1.82,1.82,0,0,1-2.73-1.58V38.11a1.82,1.82,0,0,1,2.73-1.58L75.71,54.36A1.82,1.82,0,0,1,75.71,57.51Z"/></g></g></svg>';
+    playpause_btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.87 111.87"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Laag_2" data-name="Laag 2"><g id="Laag_1-2" data-name="Laag 1"><path class="cls-1" d="M55.94,0a55.94,55.94,0,1,0,55.93,55.94A55.93,55.93,0,0,0,55.94,0ZM75.71,57.51,44.87,75.34a1.82,1.82,0,0,1-2.73-1.58V38.11a1.82,1.82,0,0,1,2.73-1.58L75.71,54.36A1.82,1.82,0,0,1,75.71,57.51Z"/></g></g></svg>';
     nowPlayingPlayPause.innerHTML = '<svg viewBox="0 0 24 24"><path d="M4 21l15.589-9L4 3z" fill="currentColor"></path></svg>';
+    document.querySelector("footer .now-playing-bar-content ul li:nth-of-type(3) button").innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 111.87 111.87"><defs><style>.cls-1{fill:#fff;}</style></defs><g id="Laag_2" data-name="Laag 2"><g id="Laag_1-2" data-name="Laag 1"><path class="cls-1" d="M55.94,0a55.94,55.94,0,1,0,55.93,55.94A55.93,55.93,0,0,0,55.94,0ZM75.71,57.51,44.87,75.34a1.82,1.82,0,0,1-2.73-1.58V38.11a1.82,1.82,0,0,1,2.73-1.58L75.71,54.36A1.82,1.82,0,0,1,75.71,57.51Z"/></g></g></svg>';
 }
 
 function nextTrack() {
@@ -374,10 +364,12 @@ function seekUpdate() {
     total_duration.textContent = durationMinutes + ":" + durationSeconds;
     }
 
-    // WHITE PROGRESS BAR WIDTH (BEFORE)
+    // PROGRESS BAR WIDTH
     seek_slider_before.style.width = seekPosition + "%"; 
     var nowPlayingBarLine = document.querySelector("footer .now-playing-bar.visible .now-playing-bar-progress div");
     nowPlayingBarLine.style.width = seekPosition + "%"; 
+    var nowPlayingBarSlider = document.querySelector("footer .now-playing-bar-content .now-playing-bar-controls > span > span");
+    nowPlayingBarSlider.style.width = seekPosition + "%"; 
 }
 
 // Load the first track in the tracklist
@@ -401,3 +393,11 @@ overlayButtonPlayPause.addEventListener("click", playpauseTrack);
 overlayButtonPrevious.addEventListener("click", prevTrack);
 overlayButtonNext.addEventListener("click", nextTrack);
 overlayButtonSeek.addEventListener("change", seekTo);
+
+// NOW PLAYING BAR CONTROL BUTTONS (TABLET AND LARGER)
+var nowPlayingBarButtonPlayPause = document.querySelector("footer .now-playing-bar-content ul li:nth-of-type(3) button");
+var nowPlayingBarButtonPrevious = document.querySelector("footer .now-playing-bar-content ul li:nth-of-type(2) button");
+var nowPlayingBarButtonNext = document.querySelector("footer .now-playing-bar-content ul li:nth-of-type(4) button");
+nowPlayingBarButtonPlayPause.addEventListener("click", playpauseTrack);
+nowPlayingBarButtonPrevious.addEventListener("click", prevTrack);
+nowPlayingBarButtonNext.addEventListener("click", nextTrack);
