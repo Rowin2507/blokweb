@@ -1285,6 +1285,9 @@ header, main, footer .now-playing-overlay ul {
   footer .now-playing-bar-content .now-playing-bar-info:focus {
     background-color: transparent;
   }
+  footer .now-playing-bar-content .now-playing-bar-controls {
+    order: 2;
+  }
   footer .now-playing-bar-content .now-playing-bar-controls > span {
     order: 3;
     position: relative;
