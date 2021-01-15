@@ -20,11 +20,14 @@ Markdown cheat cheet: [Hulp bij het schrijven van Markdown](https://github.com/a
 
 ## Eindgesprek (week 7/8)
 
--dit ging goed & dit was lastig-
+De afgelopen periode verliepen behoorlijk soepel naar eigen zeggen. Ik ben over het algemeen erg tevreden over wat ik heb opkunnen leveren. Ik ben vooral erg blij met de werkende muziekspeler, zodat je het gevoel krijgt alsof het de echte Spotify applicatie is dat je aan het gebruiken bent. Het was soms wel even lastig om tijd vrij te maken voor deze opdracht, aangezien ik het mijzelf niet heel makkelijk heb gemaakt. Om die reden heb ik niet zo veel kunnen focussen op de desktop versie als ik vooraf wilde. De telefoon en tablet versie ben ik erg tevreden over en ik vind het jammer dat de desktop versie dan wat kaal aanvoelt. Dat komt mede doordat de native versie van Spotify op desktop/laptop er erg anders uitziet dan de mobiele versies. Ik heb nu dus de webversie nagemaakt, die meer overeenkomsten heeft met de mobiele versies.
+
+Al met al ben ik vrij tevreden met het resultaat en ik hoop dat ik dat gevoel ook naar een hoog cijfer kan laten leiden :).
 
 **Screenshot(s):**
 
--screenshot(s) van je eindresultaat-
+<img src="assets/images/github/Spotify-home_desktop-week8.png" width="100%" alt="Een screenshot van een playlist pagina">
+<img src="assets/images/github/Spotify-overlay-week8.png" width="375px" alt="Een screenshot van een playlist pagina">
 
 
 
