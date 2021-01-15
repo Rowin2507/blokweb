@@ -202,6 +202,55 @@ let track_list = [
     image: "./assets/images/albums/Saturday-Night-Fever.jpeg",
     path: "./assets/songs/Bee_Gees_-_Stayin’_Alive_-_Serban_Mix.mp3",
     color: "#1F7684"
+    },
+    {
+    name: "get well soon",
+    artist: "Ariana Grande",
+    image: "./assets/images/albums/Sweetener.jpeg",
+    path: "./assets/songs/Ariana_Grande_-_get_well_soon.mp3",
+    color: "#BFA07F"
+    },
+    {
+    name: "Work from Home",
+    artist: "Fifth Harmony, Ty Dolla $ign",
+    image: "./assets/images/albums/7:27-deluxe.jpeg",
+    path: "./assets/songs/Fifth Harmony_-_Work_from_Home.mp3",
+    color: "#1C86B5"
+    },
+    {
+    name: "Take My Breath Away",
+    artist: "Berlin",
+    image: "./assets/images/albums/Take-My-Breath-Away.jpeg",
+    path: "./assets/songs/Berlin_-_Take_My_Breath_Away.mp3",
+    color: "#D8192F"
+    },
+    {
+    name: "SICKO MODE",
+    artist: "Travis Scott",
+    image: "./assets/images/albums/ASTROWORLD.jpeg",
+    path: "./assets/songs/Travis_Scott_-_SICKO_MODE.mp3",
+    color: "#562F0C"
+    },
+    {
+    name: "You Sound Like You're Sick",
+    artist: "Ramones",
+    image: "./assets/images/albums/Pleasant-Dreams.jpeg",
+    path: "./assets/songs/Ramones_-_You_Sound_Like_Youre_Sick.mp3",
+    color: "#C40000"
+    },
+    {
+    name: "In My Room",
+    artist: "Frank Ocean",
+    image: "./assets/images/albums/In-My-Room.jpeg",
+    path: "./assets/songs/Frank_Ocean_-_In_My_Room.mp3",
+    color: "#0299C1"
+    },
+    {
+    name: "Supalonely",
+    artist: "BENEE, Gus Dapperton",
+    image: "./assets/images/albums/STELLA-&-STEVE.jpeg",
+    path: "./assets/songs/BENEE_-_Supalonely.mp3",
+    color: "#6B7F49"
     }
 ];
 
@@ -215,7 +264,7 @@ function loadAlbums(track_index) {
         var overlayAlbumImg = document.createElement("img");
         overlayAlbum.setAttribute("album-order", (i + 1));
         overlayAlbumImg.src = track_list[i].image; 
-        overlayAlbumImg.alt = track_list[i].name; 
+        overlayAlbumImg.alt = track_list[i].name + " - " + track_list[i].artist; 
         
         // OVERLAY - SCROLL TO ACTIVE ALBUM
         overlayAlbumAttribute = overlayAlbum.getAttribute("album-order");
@@ -264,7 +313,7 @@ function loadTrack(track_index) {
     nowPlayingBarH5.textContent = track_list[track_index].name;
     nowPlayingBarP.textContent = track_list[track_index].artist;
     nowPlayingBarImg.src = track_list[track_index].image; 
-    nowPlayingBarImg.alt = track_list[track_index].name; 
+    nowPlayingBarImg.alt = track_list[track_index].name + " - " + track_list[track_index].artist; 
 
     // Move to the next track if the current one finishes playing
     curr_track.addEventListener("ended", nextTrack);
