@@ -270,7 +270,7 @@ let track_list = [
     name: "Harder To Breathe",
     artist: "Maroon 5",
     image: "./assets/images/albums/Songs-About-Jane.jpeg",
-    path: "./assets/songs/Maroon_5_-_Harder_To_Breathe.mp3",
+    path: "./assets/songs/Maroon5_-_Harder_To_Breathe.mp3",
     color: "#890909"
     },
     {
