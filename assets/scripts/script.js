@@ -251,6 +251,48 @@ let track_list = [
     image: "./assets/images/albums/STELLA-&-STEVE.jpeg",
     path: "./assets/songs/BENEE_-_Supalonely.mp3",
     color: "#6B7F49"
+    },
+    {
+    name: "Mask Off",
+    artist: "Future",
+    image: "./assets/images/albums/FUTURE.jpeg",
+    path: "./assets/songs/Future_-_Mask_Off.mp3",
+    color: "#C1A52F"
+    },
+    {
+    name: "Unnatural Selection",
+    artist: "Muse",
+    image: "./assets/images/albums/The-Resistance.jpeg",
+    path: "./assets/songs/Muse_-_Unnatural_Selection.mp3",
+    color: "#BF8530"
+    },
+    {
+    name: "Harder To Breathe",
+    artist: "Maroon 5",
+    image: "./assets/images/albums/Songs-About-Jane.jpeg",
+    path: "./assets/songs/Maroon_5_-_Harder_To_Breathe.mp3",
+    color: "#890909"
+    },
+    {
+    name: "Die Young",
+    artist: "Kesha",
+    image: "./assets/images/albums/Warrior.jpeg",
+    path: "./assets/songs/Kesha_-_Die_Young.mp3",
+    color: "#962929"
+    },
+    {
+    name: "Still Breathing",
+    artist: "Green Day",
+    image: "./assets/images/albums/Revolution-Radio.jpeg",
+    path: "./assets/songs/Green_Day_-_Still_Breathing.mp3",
+    color: "#A34B0F"
+    },
+    {
+    name: "Dead",
+    artist: "Madison Beer",
+    image: "./assets/images/albums/As-She-Pleases.jpeg",
+    path: "./assets/songs/Madison_Beer_-_Dead.mp3",
+    color: "#846973"
     }
 ];
 
